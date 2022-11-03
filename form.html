@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form class="w-full max-w-lg">
+        <div class="flex flex-wrap mb-6 -mx-3">
+          <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
+            <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" >
+              Nama
+            </label>
+            <input class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-red-500 rounded appearance-none focus:outline-none focus:bg-white" type="text" placeholder="rama">
+            <p class="text-xs italic text-red-500">Gunakan Nama Lengkap</p>
+          </div>
+          <div class="w-full px-3 md:w-1/2">
+            <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
+              NIM
+            </label>
+            <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="2115101056">
+          </div>
+        </div>
+        <div class="flex flex-wrap mb-6 -mx-3">
+          <div class="w-full px-3">
+            <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-email">
+              EMAIL
+            </label>
+            <input class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" type="email" placeholder="example@gmail.com">
+            <p class="text-xs italic text-gray-600">Gunakan Email Aktif.</p>
+          </div>
+          <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+            <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grid-state">
+              State
+            </label>
+            <div class="relative">
+              <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                <option>Singaraja</option>
+                <option>Denpasar</option>
+                <option>Gianyar</option>
+              </select>
+              <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
+                <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+     <div class="perhitungan">
+        BUKU
+        <input class="px-8 py-3 border bg-slate-200 form-control" type="text" name="" id="harga" placeholder="harga barang"> 
+        <input class="px-8 py-3 border bg-slate-200 form-control" type="text" name="" id="jumlah" placeholder="jumlah barang"> =
+        <input class="px-8 py-3 border bg-slate-200 form-control" type="text" name="" id="total" placeholder="total barang">
+      </div>
+      <div class="pt-10 perhitungan">
+        PULPEN
+        <input class="px-8 py-3 border bg-slate-200 form-control" type="text" name="" id="harga" placeholder="harga barang"> 
+        <input class="px-8 py-3 border bg-slate-200 form-control" type="text" name="" id="jumlah" placeholder="jumlah barang"> =
+        <input class="px-8 py-3 border bg-slate-200 form-control" type="text" name="" id="total" placeholder="total barang">
+      </div>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+            $("#jumlah, #harga").keyup(function() {
+                var harga  = $("#harga").val();
+                var jumlah = $("#jumlah").val();
+    
+                var total = parseInt(harga) * parseInt(jumlah);
+                $("#total").val(total);
+            });
+        });
+    </script>
+</html>
